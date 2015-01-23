@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+	<script src="videos.js"></script>
+</head>
+	<body onload="initCast()">
+		<ul>
+			<li><input type="radio" name="media" checked class="media" />
+				<a href="big_buck_bunny_1080p.mp4" target="_blank">Big Buck Bunny</a>
+			</li>
+			<li><input type="radio" name="media" class="media" />
+				<a href="ED_1280.mp4" target="_blank">Elephants Dream</a>
+			</li>
+		</ul>
+		<button onclick="launchApp()">Launch app</button>
+		<button onclick="stopApp()">Stop app</button>
+		<button onclick="playMedia()">Play</button>
+		<button onclick="pauseResumeMedia()" id="pauseresume">Pause</button>
+		<button onclick="stopMedia()">Stop</button>
+		Volume: <select name="volume" size="1" onchange="changeVolume()" id="volume">
+		      <option>0</option>
+		      <option>10</option>
+		      <option>20</option>
+		      <option>30</option>
+		      <option>40</option>
+		      <option selected>50</option>
+		      <option>60</option>
+		      <option>70</option>
+		      <option>80</option>
+		      <option>90</option>
+		      <option>100</option>
+		</select> %
+	</body>
+</html>
