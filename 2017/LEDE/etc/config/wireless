@@ -1,0 +1,26 @@
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option channel '11'
+	option hwmode '11g'
+	option path 'platform/qca953x_wmac'
+	option htmode 'HT20'
+	option country 'DE'
+
+config wifi-iface 'default_radio0'
+	option device 'radio0'
+	option network 'lan'
+	option mode 'ap'
+	option ssid 'LEDE'
+	option encryption 'psk2'
+	option key 'ganzgeheim'
+
+config wifi-iface
+	option device 'radio0'
+	option mode 'ap'
+	option network 'nat'
+	option encryption 'psk2'
+	option key 'ganzgeheim'
+	option ssid 'Gastzugang2'
+	option 'isolate'   '1'
+

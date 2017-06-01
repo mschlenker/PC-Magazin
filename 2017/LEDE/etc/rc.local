@@ -1,0 +1,21 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+sleep 30
+ebt=/usr/sbin/ebtables
+for t in filter nat broute ; do
+    $ebt -t $t -F
+    $ebt -t $t -X
+done
+
+#for port in 137 138 139 445 ; do
+#    for proto in tcp udp ; do
+#        $ebt -t filter -A INPUT -i wlan0 --ip-src 192.168.1.123 --ip-dst 192.168.1.2 -p IPv4 --ip-proto $proto --ip-dport $port -j ACCEPT
+#    done
+#done
+# $ebt -t filter -A INPUT -i wlan0 --ip-src 192.168.1.123 --ip-dst 192.168.1.0/24 -p IPv4 DROP
+
+$ebt -t filter -A INPUT -i wlan0 --ip-src 10.76.23.202 --ip-dst 10.76.23.5 -p IPv4 --ip-proto tcp --ip-dport 22 -j ACCEPT
+$ebt -t filter -A INPUT -i wlan0 --ip-src 10.76.23.202 --ip-dst 10.76.23.0/24 -p IPv4 -j DROP
+
+exit 0
