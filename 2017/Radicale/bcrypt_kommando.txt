@@ -1,0 +1,9 @@
+# Mit dem folgenden Python-Befehl koennen Sie auf der Konsole
+# einen Passwort-Hash erzeugen. Unter Windows ist ggf. der 
+# komplette Pfad zur python.exe anzugeben:
+
+python -c 'import bcrypt; print(bcrypt.hashpw("GanzGeheimesPasswort", bcrypt.gensalt(log_rounds=10)))'
+
+# Danke an alle aus deisem Thread: 
+# https://unix.stackexchange.com/questions/307994/compute-bcrypt-hash-from-command-line
+
